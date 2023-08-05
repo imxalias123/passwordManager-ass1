@@ -161,14 +161,47 @@
 }
 .each-password-container {
   display: flex;
+  width: 80px;
+  height: 80px;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
 }
 .initial {
+  border-radius: 100%;
+  border: 0px;
+  color: #ffffff;
+  width: 24px;
 }
+.a {
+  background-color: #7683cb;
+}
+.b {
+  background-color: #f59e0b;
+}
+.c {
+  background-color: #10b981;
+}
+.d {
+  background-color: #f97316;
+}
+.e {
+  background-color: #14b8a6;
+}
+.f {
+  background-color: #b91c1c;
+}
+
 .web-text {
 }
 .username-text {
 }
 .stars {
+  width: 60px;
 }
 .password-text {
+}
+.del-img {
+}
+
+.delete {
 }

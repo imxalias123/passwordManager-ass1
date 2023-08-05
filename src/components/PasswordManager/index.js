@@ -63,6 +63,8 @@ class PasswordManager extends Component {
     }
   }
 
+  onDelete = () => {}
+
   render() {
     const {
       website,
@@ -100,7 +102,7 @@ class PasswordManager extends Component {
                   className="input"
                   type="text"
                   onChange={this.onChangeWebsite}
-                  value=""
+                  value={website}
                   placeholder="Enter Website"
                 />
               </div>
@@ -114,7 +116,7 @@ class PasswordManager extends Component {
                   className="input"
                   type="text"
                   onChange={this.onChangeUsername}
-                  value=""
+                  value={username}
                   placeholder="Enter Username"
                 />
               </div>
@@ -128,7 +130,7 @@ class PasswordManager extends Component {
                   className="input"
                   type="text"
                   onChange={this.onChangePassword}
-                  value=""
+                  value={password}
                   placeholder="Enter Password"
                 />
               </div>
@@ -208,6 +210,18 @@ class PasswordManager extends Component {
                       <p className="password-text">{eachValue.password}</p>
                     )}
                   </div>
+                  <button
+                    type="button"
+                    onClick={this.onDelete}
+                    className="delete"
+                    data-testid="delete"
+                  >
+                    <img
+                      src="https://assets.ccbp.in/frontend/react-js/password-manager-delete-img.png"
+                      alt="delete"
+                      className="del-img"
+                    />
+                  </button>
                 </li>
               ))}
             </ul>
