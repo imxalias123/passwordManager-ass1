@@ -1,0 +1,80 @@
+.app-container {
+  background-image: linear-gradient(to bottom, #9ba9eb, #c3caea);
+  min-height: 100vh;
+  padding: 30px;
+}
+.logo {
+  width: 82px;
+  margin-bottom: 20px;
+}
+.addNewPassword-container {
+  background-color: #5763a5;
+  padding: 20px;
+  border-radius: 5px;
+}
+.card-container {
+  background-color: #454f84;
+  padding: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+}
+
+.sm-img-1 {
+  width: 300px;
+}
+
+.lg-img-1 {
+  display: none;
+}
+@media (min-width: 768px) {
+  .lg-img-1 {
+    display: flex;
+  }
+  .sm-img-1 {
+    display: none;
+  }
+}
+.heading {
+  color: #ffffff;
+  font-size: 20px;
+  font-family: 'roboto';
+  font-weight: 500;
+  margin-top: 5px;
+}
+.input-logo {
+  width: 16px;
+  height: 16px;
+  margin: 10px;
+}
+.input-container {
+  background-color: #ffffff;
+  width: 100%;
+  margin-bottom: 15px;
+  height: 38px;
+  display: flex;
+  flex-direction: row;
+  border-radius: 6px;
+}
+.input {
+  border: 0px;
+  border-left: 1px solid #94a3b8;
+  height: 100%;
+  width: 100%;
+  margin-bottom: 50px;
+  padding: 5px;
+  background-color: transparent;
+  outline: none;
+}
+.add-btn {
+  color: #ffffff;
+  background-color: #0b69ff;
+  border: 0px;
+  border-radius: 4px;
+  padding: 10px;
+  outline: none;
+  font-size: 12px;
+  align-self: flex-end;
+  width: 70px;
+  margin-top: 5px;
+}
