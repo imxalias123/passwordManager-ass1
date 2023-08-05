@@ -63,7 +63,12 @@ class PasswordManager extends Component {
     }
   }
 
-  onDelete = () => {}
+  onDelete = id => {
+    const {list} = this.state
+    const newList = list.filter(each => each.id !== id)
+    const trueOrFalse = newList.length !== 0
+    this.setState({list: newList, isFilled: trueOrFalse})
+  }
 
   render() {
     const {
@@ -72,9 +77,19 @@ class PasswordManager extends Component {
       password,
       isShow,
       list,
-      isFilled,
+
       searchInput,
     } = this.state
+    let isFilled = this.state
+    const newList = list.filter(each =>
+      each.websiteName.toLowerCase().includes(searchInput.toLowerCase()),
+    )
+
+    if (newList.length === 0) {
+      isFilled = false
+    } else {
+      isFilled = true
+    }
 
     return (
       <div className="app-container">
@@ -192,11 +207,15 @@ class PasswordManager extends Component {
           {isFilled && (
             <ul className="stored-password">
               {list.map(eachValue => (
-                <li className="each-password-container">
+                <li
+                  id={eachValue.id}
+                  key={eachValue.id}
+                  className="each-password-container"
+                >
                   <p className={`initial ${eachValue.colorClass}`}>
                     {eachValue.initial}
                   </p>
-                  <div>
+                  <div className="list-content">
                     <p className="web-text">{website}</p>
                     <p className="username-text">{username}</p>
                     {!isShow && (
