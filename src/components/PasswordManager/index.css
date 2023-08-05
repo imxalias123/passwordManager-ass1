@@ -31,6 +31,7 @@
   .lg-img-1 {
     display: flex;
   }
+
   .sm-img-1 {
     display: none;
   }
@@ -76,5 +77,5 @@
   font-size: 12px;
   align-self: flex-end;
   width: 70px;
-  margin-top: 5px;
+  margin-top: 6px;
 }
