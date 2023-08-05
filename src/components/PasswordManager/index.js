@@ -73,6 +73,34 @@ class PasswordManager extends Component {
             className="lg-img-1"
           />
         </div>
+        <div className="passwordList-container">
+          <div className="passwordSearch-count">
+            <div className="passwordCount">
+              <h1 className="password-heading">Your Passwords</h1>
+              <p className="count">c</p>
+            </div>
+            <div className="search-element">
+              <img
+                src="https://assets.ccbp.in/frontend/react-js/password-manager-search-img.png"
+                alt="search"
+                className="search-img"
+              />
+              <input
+                type="search"
+                placeholder="Search"
+                className="search-bar"
+              />
+            </div>
+          </div>
+
+          <hr className="hr-line" />
+          <div className="show-password">
+            <input type="checkbox" id="check" className="checkbox" />
+            <label htmlFor="check" className="checkbox-label">
+              Show Passwords
+            </label>
+          </div>
+        </div>
       </div>
     )
   }

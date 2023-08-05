@@ -11,6 +11,7 @@
   background-color: #5763a5;
   padding: 20px;
   border-radius: 5px;
+  margin-bottom: 20px;
 }
 .card-container {
   background-color: #454f84;
@@ -78,4 +79,66 @@
   align-self: flex-end;
   width: 70px;
   margin-top: 6px;
+}
+/*password */
+
+.passwordList-container {
+  background-color: #5763a5;
+  padding-left: 15px;
+  padding-top: 20px;
+  border-radius: 5px;
+}
+.passwordSearch-count {
+  display: flex;
+  justify-content: space-between;
+}
+
+.password-heading {
+  color: #ffffff;
+  font-family: 'roboto';
+  font-size: 14px;
+
+  font-weight: 800;
+}
+.passwordCount {
+  display: flex;
+}
+.count {
+  border: 1px solid #b6c3ca;
+  margin-top: 6px;
+  margin-left: 10px;
+  color: #ffffff;
+  background-color: transparent;
+  width: 20px;
+  border-radius: 6px;
+
+  text-align: center;
+}
+.search-element {
+  background-color: #ffffff;
+  width: 100px;
+  height: 20px;
+  display: flex;
+  margin-top: 10px;
+}
+.search-img {
+  width: 20px;
+  height: 20px;
+  margin: 3px;
+}
+.search-bar {
+  width: 60px;
+  outline: none;
+  border: none;
+  border-left: 1px solid #94a3b8;
+}
+.checkbox {
+}
+.show-password {
+  display: flex;
+  justify-content: flex-end;
+  align-self: flex-end;
+}
+.checkbox-label {
+  color: white;
 }
