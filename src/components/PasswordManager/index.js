@@ -143,7 +143,7 @@ class PasswordManager extends Component {
                 />
                 <input
                   className="input"
-                  type="text"
+                  type="password"
                   onChange={this.onChangePassword}
                   value={password}
                   placeholder="Enter Password"
@@ -175,6 +175,7 @@ class PasswordManager extends Component {
               />
               <input
                 type="search"
+                value={searchInput}
                 placeholder="Search"
                 className="search-bar"
                 onChange={this.onChangeSearchList}
