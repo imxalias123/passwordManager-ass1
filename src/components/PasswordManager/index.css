@@ -142,3 +142,33 @@
 .checkbox-label {
   color: white;
 }
+.no-passwords {
+  width: 200px;
+}
+.no-password-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.no-pass-text {
+  color: #ffffff;
+  font-family: 'roboto';
+  font-size: 20px;
+}
+.stored-password {
+  display: flex;
+}
+.each-password-container {
+  display: flex;
+}
+.initial {
+}
+.web-text {
+}
+.username-text {
+}
+.stars {
+}
+.password-text {
+}

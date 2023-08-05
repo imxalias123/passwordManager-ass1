@@ -1,8 +1,79 @@
 import {Component} from 'react'
+import {v4 as uuidv4} from 'uuid'
 import './index.css'
 
+const colors = ['a', 'b', 'c', 'd', 'e', 'f']
+
 class PasswordManager extends Component {
+  state = {
+    website: '',
+    username: '',
+    password: '',
+    list: [],
+    isFilled: false,
+    isShow: false,
+  }
+
+  onChangeWebsite = event => {
+    this.setState({website: event.target.value})
+  }
+
+  onChangeUsername = event => {
+    this.setState({username: event.target.value})
+  }
+
+  onChangePassword = event => {
+    this.setState({password: event.target.value})
+  }
+
+  onAddPassword = event => {
+    event.preventDefault()
+    const {website, username, password} = this.state
+    const initialValue = website[0].toUpperCase()
+    const colorClassName = colors[Math.floor(Math.random() * 6)]
+
+    const newValues = {
+      id: uuidv4(),
+      websiteName: website,
+      userName: username,
+      Password: password,
+      initial: initialValue,
+      colorClass: colorClassName,
+    }
+
+    this.setState(prevState => ({
+      list: [...prevState.list, newValues],
+      website: '',
+      username: '',
+      password: '',
+      isFilled: true,
+      searchInput: '',
+    }))
+  }
+
+  onChangeSearchList = event => {
+    this.setState({searchInput: event.target.value})
+  }
+
+  onChangeShowPassword = event => {
+    if (event.target.checked) {
+      this.setState({isShow: true})
+    } else {
+      this.setState({isShow: false})
+    }
+  }
+
   render() {
+    const {
+      website,
+      username,
+      password,
+      isShow,
+      list,
+      isFilled,
+      searchInput,
+    } = this.state
+
     return (
       <div className="app-container">
         <img
@@ -89,17 +160,58 @@ class PasswordManager extends Component {
                 type="search"
                 placeholder="Search"
                 className="search-bar"
+                onChange={this.onChangeSearchList}
               />
             </div>
           </div>
 
           <hr className="hr-line" />
           <div className="show-password">
-            <input type="checkbox" id="check" className="checkbox" />
+            <input
+              type="checkbox"
+              id="check"
+              className="checkbox"
+              onChange={this.onChangeShowPassword}
+            />
             <label htmlFor="check" className="checkbox-label">
               Show Passwords
             </label>
           </div>
+          {!isFilled && (
+            <div className="no-password-flex">
+              <img
+                src="https://assets.ccbp.in/frontend/react-js/no-passwords-img.png"
+                alt="no passwords"
+                className="no-passwords"
+              />
+              <p className="no-pass-text">No Passwords</p>
+            </div>
+          )}
+          {isFilled && (
+            <ul className="stored-password">
+              {list.map(eachValue => (
+                <li className="each-password-container">
+                  <p className={`initial ${eachValue.colorClass}`}>
+                    {eachValue.initial}
+                  </p>
+                  <div>
+                    <p className="web-text">{website}</p>
+                    <p className="username-text">{username}</p>
+                    {!isShow && (
+                      <img
+                        src="https://assets.ccbp.in/frontend/react-js/password-manager-stars-img.png"
+                        alt="stars"
+                        className="stars"
+                      />
+                    )}
+                    {isShow && (
+                      <p className="password-text">{eachValue.password}</p>
+                    )}
+                  </div>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       </div>
     )
