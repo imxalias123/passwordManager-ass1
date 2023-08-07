@@ -71,15 +71,7 @@ class PasswordManager extends Component {
   }
 
   render() {
-    const {
-      website,
-      username,
-      password,
-      isShow,
-      list,
-
-      searchInput,
-    } = this.state
+    const {website, username, password, isShow, list, searchInput} = this.state
     let isFilled = this.state
     const newList = list.filter(each =>
       each.websiteName.toLowerCase().includes(searchInput.toLowerCase()),
@@ -165,7 +157,7 @@ class PasswordManager extends Component {
           <div className="passwordSearch-count">
             <div className="passwordCount">
               <h1 className="password-heading">Your Passwords</h1>
-              <p className="count">c</p>
+              <p className="count">{newList.length}</p>
             </div>
             <div className="search-element">
               <img
@@ -217,8 +209,8 @@ class PasswordManager extends Component {
                     {eachValue.initial}
                   </p>
                   <div className="list-content">
-                    <p className="web-text">{website}</p>
-                    <p className="username-text">{username}</p>
+                    <p className="web-text">{eachValue.websiteName}</p>
+                    <p className="username-text">{eachValue.userName}</p>
                     {!isShow && (
                       <img
                         src="https://assets.ccbp.in/frontend/react-js/password-manager-stars-img.png"
