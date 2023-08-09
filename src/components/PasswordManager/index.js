@@ -71,7 +71,15 @@ class PasswordManager extends Component {
   }
 
   render() {
-    const {website, username, password, isShow, list, searchInput} = this.state
+    const {
+      id,
+      website,
+      username,
+      password,
+      isShow,
+      list,
+      searchInput,
+    } = this.state
     let isFilled = this.state
     const newList = list.filter(each =>
       each.websiteName.toLowerCase().includes(searchInput.toLowerCase()),
@@ -224,7 +232,7 @@ class PasswordManager extends Component {
                   </div>
                   <button
                     type="button"
-                    onClick={this.onDelete}
+                    onClick={this.onDelete(id)}
                     className="delete"
                     data-testid="delete"
                   >
