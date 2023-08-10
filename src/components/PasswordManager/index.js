@@ -232,7 +232,7 @@ class PasswordManager extends Component {
                   </div>
                   <button
                     type="button"
-                    onClick={this.onDelete(id)}
+                    onClick={() => this.onDelete(eachValue.id)}
                     className="delete"
                     data-testid="delete"
                   >
