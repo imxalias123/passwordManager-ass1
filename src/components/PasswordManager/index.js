@@ -227,7 +227,7 @@ class PasswordManager extends Component {
                       />
                     )}
                     {isShow && (
-                      <p className="password-text">{eachValue.password}</p>
+                      <p className="password-text">{eachValue.Password}</p>
                     )}
                   </div>
                   <button
