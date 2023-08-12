@@ -101,7 +101,7 @@ class PasswordManager extends Component {
         <div className="addNewPassword-container">
           <img
             src="https://assets.ccbp.in/frontend/react-js/password-manager-sm-img.png"
-            alt="password"
+            alt="password-manager"
             className="sm-img-1"
           />
           <div className="card-container">
